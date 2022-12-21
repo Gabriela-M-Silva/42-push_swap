@@ -6,7 +6,7 @@
 #    By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 15:47:39 by gde-mora          #+#    #+#              #
-#    Updated: 2022/12/21 22:34:46 by gde-mora         ###   ########.fr        #
+#    Updated: 2022/12/21 23:49:20 by gde-mora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap
 
 SRC = main.c ./doubly_linked_list_utils/doubly_lst_index.c  ./doubly_linked_list_utils/doubly_lstadd_back.c \
 	./doubly_linked_list_utils/doubly_lstlast.c ./doubly_linked_list_utils/doubly_lstnew.c \
-	display_error.c atoi_check.c validate.c ./doubly_linked_list_utils/doubly_lstclear.c
+	display_error.c atoi_check.c validate.c ./doubly_linked_list_utils/doubly_lstclear.c \
+	
 
 OBJ = $(SRC:.c=.o)
 

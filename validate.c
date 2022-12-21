@@ -6,11 +6,32 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 22:23:29 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/21 22:43:57 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/12/22 00:27:31 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_duplicate(char **argv)
+{
+	int	i;
+	int	j;
+	int	aux;
+
+	i = 1;
+	while (argv[i])
+	{
+		aux = ft_atoi(argv[i]);
+		j = i;
+		while (argv[j + 1])
+		{
+			if (aux == ft_atoi(argv[j + 1]))
+				display_error(NULL);
+			j++;
+		}
+		i++;
+	}
+}
 
 void	check_max_min_int(char	*argv, int point, int number, char *aux)
 {
@@ -60,7 +81,5 @@ void	validate_args(int argc, char **argv)
 		exit (0); //If no parameters are specified, the program must not display anything and give the prompt back.
 					//argc 2 é um numero só. Tratando como ja sendo lista ordenada e saindo
 	check_numeric(argv);
-//	check_duplicate(argv); //pega 1 do argv e percorre td argv comparando, dps pro prox e percorre td comparando dnv
-//	check_numbers(argv); (no)
-//	ft_printf("Input.\n"); //personalizar dentro da função dps
+	check_duplicate(argv); //pega 1 do argv e percorre td argv comparando, dps pro prox e percorre td comparando dnv
 }
