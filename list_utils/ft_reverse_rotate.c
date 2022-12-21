@@ -6,20 +6,20 @@
 /*   By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:50:55 by gsmereka          #+#    #+#             */
-/*   Updated: 2022/12/21 18:28:25 by gsmereka         ###   ########.fr       */
+/*   Updated: 2022/12/19 18:00:22 by gsmereka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../headers/push_swap.h"
 
-static void	init_new_nodes(t_rotate *new, t_doubly_list **stack);
+static void	init_new_nodes(t_rotate *new, t_list **stack);
 static void	init_next_pointers_on_new_nodes(t_rotate *new);
 static void	init_prev_pointers_on_new_nodes(t_rotate *new);
-static void	put_new_stack_on_data(t_rotate *new, t_doubly_list **stack);
+static void	put_new_stack_on_data(t_rotate *new, t_list **stack);
 
 int	ft_reverse_rotate(char stack_c, t_data *data)
 {
-	t_doubly_list		**stack;
+	t_list		**stack;
 	t_rotate	new;
 
 	if (stack_c == 'a')
@@ -37,11 +37,11 @@ int	ft_reverse_rotate(char stack_c, t_data *data)
 	return (0);
 }
 
-static void	init_new_nodes(t_rotate *new, t_doubly_list **stack)
+static void	init_new_nodes(t_rotate *new, t_list **stack)
 {
-	new->first_node = ft_doubly_list_last(*stack);
+	new->first_node = ft_list_last(*stack);
 	new->scond_node = *stack;
-	new->last_node = (ft_doubly_list_last(*stack))->prev;
+	new->last_node = (ft_list_last(*stack))->prev;
 }
 
 static void	init_next_pointers_on_new_nodes(t_rotate *new)
@@ -56,7 +56,7 @@ static void	init_prev_pointers_on_new_nodes(t_rotate *new)
 	new->scond_node->prev = new->first_node;
 }
 
-static void	put_new_stack_on_data(t_rotate *new, t_doubly_list **stack)
+static void	put_new_stack_on_data(t_rotate *new, t_list **stack)
 {
 	*stack = new->first_node;
 }
