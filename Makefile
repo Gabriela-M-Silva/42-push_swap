@@ -14,7 +14,7 @@ NAME = push_swap
 
 SRC = 	main.c ./doubly_linked_list_utils/doubly_lst_index.c  ./doubly_linked_list_utils/doubly_lstadd_back.c \
 		./doubly_linked_list_utils/doubly_lstlast.c ./doubly_linked_list_utils/doubly_lstnew.c \
-		display_error.c atoi_check.c \
+		display_error.c atoi_check.c validate.c ./doubly_linked_list_utils/doubly_lstclear.c\
 		./list_utils/ft_push.c ./list_utils/ft_swap.c ./list_utils/ft_reverse_rotate.c ./list_utils/ft_rotate.c \
 		./list_utils/list_utils_1.c ./list_utils/list_utils_2.c \
 

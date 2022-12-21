@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display_error.c                                    :+:      :+:    :+:   */
+/*   doubly_lstclear.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 15:36:05 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/21 22:43:17 by gde-mora         ###   ########.fr       */
+/*   Created: 2022/12/21 20:31:50 by gde-mora          #+#    #+#             */
+/*   Updated: 2022/12/21 20:39:40 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	display_error(char *aux)
+void	doubly_lstclear(t_doubly_list *lst)
 {
-	ft_putstr_fd("Error\n", 2); //colocar em tds os lugares
-	if (aux && *aux)
-		free(aux);
-	exit (0);
+	if (lst)
+	{
+		doubly_lstclear(lst->next);
+		free(lst);
+	}
 }

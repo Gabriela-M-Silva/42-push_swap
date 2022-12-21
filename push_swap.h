@@ -50,8 +50,10 @@ t_doubly_list	*ft_doubly_lstnew(int content);
 void	ft_doubly_lstadd_back(t_doubly_list **lst, int number);
 t_doubly_list	*ft_doubly_lstlast(t_doubly_list *lst);
 t_doubly_list	*ft_doubly_lst_index(t_doubly_list *lst, unsigned int index);
-void	display_error();
+void	display_error(char *aux);
 int	atoi_check(const char *str);
+void	doubly_lstclear(t_doubly_list *lst);
+void	validate_args(int argc, char **argv);
 
 t_doubly_list	*ft_create_elem(int nmb);
 void			ft_doubly_list_push_front(t_doubly_list **begin_list, int nmb);
