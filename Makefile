@@ -3,18 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 15:47:39 by gde-mora          #+#    #+#              #
-#    Updated: 2022/12/21 22:34:46 by gde-mora         ###   ########.fr        #
+#    Updated: 2022/12/21 18:24:03 by gsmereka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = main.c ./doubly_linked_list_utils/doubly_lst_index.c  ./doubly_linked_list_utils/doubly_lstadd_back.c \
-	./doubly_linked_list_utils/doubly_lstlast.c ./doubly_linked_list_utils/doubly_lstnew.c \
-	display_error.c atoi_check.c validate.c ./doubly_linked_list_utils/doubly_lstclear.c
+SRC = 	main.c ./doubly_linked_list_utils/doubly_lst_index.c  ./doubly_linked_list_utils/doubly_lstadd_back.c \
+		./doubly_linked_list_utils/doubly_lstlast.c ./doubly_linked_list_utils/doubly_lstnew.c \
+		display_error.c atoi_check.c validate.c ./doubly_linked_list_utils/doubly_lstclear.c\
+		./list_utils/ft_push.c ./list_utils/ft_swap.c ./list_utils/ft_reverse_rotate.c ./list_utils/ft_rotate.c \
+		./list_utils/list_utils_1.c ./list_utils/list_utils_2.c \
 
 OBJ = $(SRC:.c=.o)
 
