@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:44:14 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/21 19:51:55 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/12/21 19:56:43 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void	check_numeric(char **argv)
 	int number;
 	char	*aux;
 
-	point = 0;
-	signal = 0;
 	i = 1;
 	aux = NULL;
 	while (argv[i])
 	{
+		point = 0;
+		signal = 0;
 		point = atoi_check(argv[i]);
 		number = ft_atoi(argv[i]);
 		aux = ft_itoa(number);
