@@ -6,15 +6,15 @@
 /*   By: gsmereka <gsmereka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 12:47:43 by gsmereka          #+#    #+#             */
-/*   Updated: 2022/12/21 18:28:25 by gsmereka         ###   ########.fr       */
+/*   Updated: 2022/12/19 18:00:24 by gsmereka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../headers/push_swap.h"
 
-static int		push_stack(t_doubly_list **stack_1, t_doubly_list **stack_2);
-static t_doubly_list	*set_pushed_node(t_doubly_list **stack_1);
-static t_doubly_list	*set_pulled_node(t_doubly_list **stack_1, t_doubly_list **stack_2);
+static int		push_stack(t_list **stack_1, t_list **stack_2);
+static t_list	*set_pushed_node(t_list **stack_1);
+static t_list	*set_pulled_node(t_list **stack_1, t_list **stack_2);
 
 int	ft_push(char stack_c, t_data *data)
 {
@@ -25,10 +25,10 @@ int	ft_push(char stack_c, t_data *data)
 	return (0);
 }
 
-static int	push_stack(t_doubly_list **stack_1, t_doubly_list **stack_2)
+static int	push_stack(t_list **stack_1, t_list **stack_2)
 {
-	t_doubly_list	*pushed_stack;
-	t_doubly_list	*pulled_stack;
+	t_list	*pushed_stack;
+	t_list	*pulled_stack;
 
 	if (*stack_1 == NULL)
 		return (0);
@@ -39,10 +39,10 @@ static int	push_stack(t_doubly_list **stack_1, t_doubly_list **stack_2)
 	return (0);
 }
 
-static t_doubly_list	*set_pulled_node(t_doubly_list **stack_1, t_doubly_list **stack_2)
+static t_list	*set_pulled_node(t_list **stack_1, t_list **stack_2)
 {
-	t_doubly_list	*second_pulled_node;
-	t_doubly_list	*pulled_node;
+	t_list	*second_pulled_node;
+	t_list	*pulled_node;
 
 	pulled_node = (*stack_1);
 	pulled_node->next = (*stack_2);
@@ -53,9 +53,9 @@ static t_doubly_list	*set_pulled_node(t_doubly_list **stack_1, t_doubly_list **s
 	return (pulled_node);
 }
 
-static t_doubly_list	*set_pushed_node(t_doubly_list **stack_1)
+static t_list	*set_pushed_node(t_list **stack_1)
 {
-	t_doubly_list	*pushed_node;
+	t_list	*pushed_node;
 
 	pushed_node = (*stack_1)->next;
 	if (pushed_node)
