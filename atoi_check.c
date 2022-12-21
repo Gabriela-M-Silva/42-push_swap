@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:32:09 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/21 19:33:58 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/12/21 22:38:50 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ int atoi_check(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] != '\0')
-		display_error();
+		display_error(NULL);
 	return (point);
 }
