@@ -6,23 +6,38 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:44:14 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/21 19:56:43 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/12/21 22:03:37 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void	check_max_int(char	**argv)
+void	check_max_int(char	*argv, int point, int number, char *aux, int signal)
 {
-	int	i;
-
-	i = 1;
-	while (argv[i])
-	{
-		atoi_check(argv[i]);
-		i++;
-	}
-}*/
+	if (argv[point] == '-')
+		{
+			signal = 1;
+			point++;
+			if (number == 0)
+			{
+				ft_printf("string aux: %s\n", aux);
+				ft_printf("string origem: %s\n", &argv[point]);
+				ft_printf("num: %d\n", number);
+				ft_printf("------------\n");
+				if (ft_strncmp(aux, &argv[point], ft_strlen(aux)) != 0)
+					display_error();
+				return ;
+			}
+		}
+		while (argv[point] == '0' && argv[point + 1] != '\0')
+			point++;
+		ft_printf("string aux: %s\n", &aux[signal]);
+		ft_printf("string origem: %s\n", &argv[point]);
+		ft_printf("num: %d\n", number);
+		ft_printf("------------\n"); //teste
+		if (ft_strncmp(&aux[signal], &argv[point], ft_strlen(aux)) != 0)
+			display_error();
+}
 
 void	check_numeric(char **argv)
 {
@@ -41,29 +56,7 @@ void	check_numeric(char **argv)
 		point = atoi_check(argv[i]);
 		number = ft_atoi(argv[i]);
 		aux = ft_itoa(number);
-		if (argv[i][point] == '-')
-		{
-			signal = 1;
-			point++;
-			if (number == 0)
-			{
-				ft_printf("string aux: %s\n", aux);
-				ft_printf("string origem: %s\n", &argv[i][point]);
-				ft_printf("num: %d\n", number);
-				ft_printf("------------\n");
-				if (ft_strncmp(aux, &argv[i][point], ft_strlen(aux)) != 0)
-					display_error();
-				return ;
-			}
-		}
-		while (argv[i][point] == '0' && argv[i][point + 1] != '\0')
-			point++;
-		ft_printf("string aux: %s\n", &aux[signal]);
-		ft_printf("string origem: %s\n", &argv[i][point]);
-		ft_printf("num: %d\n", number);
-		ft_printf("------------\n"); //teste
-		if (ft_strncmp(&aux[signal], &argv[i][point], ft_strlen(aux)) != 0)
-			display_error();
+		check_max_int(argv[i], point, number, aux, signal);
 		i++;
 	//	free(aux);
 	}
