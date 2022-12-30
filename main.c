@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:44:14 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/25 20:32:55 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/12/30 20:21:35 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,22 @@ int	main(int argc, char **argv) //rodar com valgrind dps  //e norminette
 
 //print p teste
 	int i = 0;
-	while (i < argc - 1) //temporario
+	while (i < doubly_lstsize(data.stack_a)) //temporario
 	{
 		aux_node = ft_doubly_lst_index(data.stack_a, i++);  //oq tem q imprimir é as trocas
 		ft_printf("%d\n", aux_node->content);
 	}
-//	ordenate(&data);
+	ft_printf("-------------\n");
+
+	ordenate(&data, argv);
+
+//print p teste
+/*	i = 0;
+	while (i < doubly_lstsize(data.stack_a)) //temporario
+	{
+		aux_node = ft_doubly_lst_index(data.stack_a, i++);  //oq tem q imprimir é as trocas
+		ft_printf("A list: %d\n", aux_node->content);
+	}
 	doubly_lstclear(data.stack_a);
-	return (0);
+	return (0);*/
 }
