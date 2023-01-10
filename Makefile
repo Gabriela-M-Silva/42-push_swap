@@ -6,7 +6,7 @@
 #    By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 15:47:39 by gde-mora          #+#    #+#              #
-#    Updated: 2022/12/27 20:25:37 by gde-mora         ###   ########.fr        #
+#    Updated: 2022/12/31 20:01:04 by gde-mora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC = main.c ./doubly_linked_list_utils/doubly_lst_index.c  ./doubly_linked_list
 	./doubly_linked_list_utils/doubly_lstclear.c ./doubly_linked_list_utils/doubly_lstsize.c \
 	display_error.c atoi_check.c validate.c ordenate.c ./ordenate_operations/swap.c \
 	./ordenate_operations/push.c ./ordenate_operations/rotate.c ./ordenate_operations/reverse_rotate.c \
+	sort_small_list.c
 
 OBJ = $(SRC:.c=.o)
 

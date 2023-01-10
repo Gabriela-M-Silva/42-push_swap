@@ -6,37 +6,58 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 01:08:48 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/30 22:04:56 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/12/31 21:14:18 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	test_ordenate(t_data *data) //func apenas p teste, tirar dps
+void	radix_aux(t_data *data, int number, int shifter)
 {
-	t_doubly_list *aux_node;
-
-//	swap(data, 'a');
-//	swap(data, 'b');
-//	push(data, 'a');
-//	push(data, 'b');
-//	rotate(data, 'a');
-//	rotate(data, 'b');
-//	reverse_rotate(data, 'a');
-//	reverse_rotate(data, 'b');
-	int	i = 0;
-	while (i < doubly_lstsize(data->stack_b)) //temporario
+	if ((number >> shifter) & 1)
 	{
-		aux_node = ft_doubly_lst_index(data->stack_b, i++);  //oq tem q imprimir é as trocas
-		ft_printf("B list: %d\n", aux_node->content);
+		rotate(data, 'a');
+		ft_printf("ra\n");
+	}
+	else
+	{
+		push(data, 'b');
+		ft_printf("pb\n");
+	}
+}
+
+void	radix_sort(t_data *data)
+{
+	int	lst_size;
+	int	shifter;
+	int	element;
+	int	number;
+
+	lst_size = doubly_lstsize(data->stack_a);
+	shifter = 0;
+	while (!check_lst_ordenate(data))
+	{
+		element = 0;
+		while (element < lst_size)
+		{
+			number = data->stack_a->simplified_number;
+			radix_aux(data, number, shifter);
+			element++;
+		}
+		while (data->stack_b)
+		{
+			push(data, 'a');
+			ft_printf("pa\n");
+		}
+		shifter++;
 	}
 }
 
 void	simplify_values(t_data *data)
 {
-	t_doubly_list *node;
-	t_doubly_list *aux_node;
-	int 			value;
+	t_doubly_list	*node;
+	t_doubly_list	*aux_node;
+	int				value;
 
 	node = data->stack_a;
 	while (node)
@@ -45,7 +66,7 @@ void	simplify_values(t_data *data)
 		aux_node = data->stack_a;
 		while (aux_node)
 		{
-			if (node->content > aux_node->content) //scrr n funfa
+			if (node->content > aux_node->content)
 				value++;
 			aux_node = aux_node->next;
 		}
@@ -56,12 +77,27 @@ void	simplify_values(t_data *data)
 
 void	ordenate(t_data *data)
 {
-	data->stack_b = NULL;
-	//test_ordenate(data); //func apenas p teste, tirar dps
-	simplify_values(data);
-	
-	//a quantidade de elementos pra sort importa
+	int	lst_size;
 
-	if (data->stack_b)
-		doubly_lstclear(data->stack_b);
+	data->stack_b = NULL;
+	lst_size = doubly_lstsize(data->stack_a);
+	simplify_values(data);
+	if (lst_size == 2)
+	{
+		swap(data, 'a');
+		ft_printf("sa\n");
+	}
+	else if (lst_size == 3)
+		sort_3_elements(data);
+	else if (lst_size == 4 || lst_size == 5)
+	{
+		sort_5_elements(data);
+		while (data->stack_b)
+		{
+			push(data, 'a');
+			ft_printf("pa\n");
+		}
+	}
+	else
+		radix_sort(data);
 }

@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-int atoi_check(const char *str)
+int	atoi_check(const char *str)
 {
-	int i;
-	int point;
+	int	i;
+	int	point;
 
 	i = 0;
 	point = 0;
@@ -27,15 +27,7 @@ int atoi_check(const char *str)
 	if (str[i] == '+')
 		point++;
 	if (str[i] == '+' || str[i] == '-')
-	{
 		i++;
-	//	point++;
-	}
-/*	while (str[i] == '0' && str[i + 1]) //?????
-	{
-		point++;
-		i++;
-	}*/
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] != '\0')

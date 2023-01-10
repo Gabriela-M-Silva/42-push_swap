@@ -14,7 +14,7 @@
 
 void	display_error(char *aux)
 {
-	ft_putstr_fd("Error\n", 2); //colocar em tds os lugares
+	ft_putstr_fd("Error\n", 2);
 	if (aux && *aux)
 		free(aux);
 	exit (0);

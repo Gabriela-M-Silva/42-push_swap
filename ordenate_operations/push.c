@@ -28,11 +28,11 @@ t_doubly_list	*set_pull(t_doubly_list **receiver, t_doubly_list **donate)
 	t_doubly_list	*second_pulled_node;
 
 	pulled_node = (*donate);
-	pulled_node->next = (*receiver); // aq o receiver tem o prev null
+	pulled_node->next = (*receiver);
 	pulled_node->prev = NULL;
 	second_pulled_node = (*receiver);
 	if (second_pulled_node)
-		second_pulled_node->prev = pulled_node; //precisa disso?  //aq o receiver tem o prev do novo nodo no inicio
+		second_pulled_node->prev = pulled_node;
 	return (pulled_node);
 }
 

@@ -26,25 +26,25 @@ void	set_prev(t_swap *new_stack)
 		new_stack->third_node->prev = new_stack->second_node;
 }
 
-static void	set_new_pointers(t_doubly_list *old_stack, t_data *data, char identify)
+static void	set_new_pointers(t_doubly_list *old, t_data *data, char identify)
 {
 	t_swap	new_stack;
 
-	new_stack.first_node = old_stack->next;
-	new_stack.second_node = old_stack;
-	new_stack.third_node = old_stack->next->next; //colocar prev e next aq tbm?
+	new_stack.first_node = old->next;
+	new_stack.second_node = old;
+	new_stack.third_node = old->next->next;
 	set_prev(&new_stack);
 	set_next(&new_stack);
 	if (identify == 'a')
-		data->stack_a = new_stack.first_node; //criar func pra isso?
+		data->stack_a = new_stack.first_node;
 	else if (identify == 'b')
 		data->stack_b = new_stack.first_node;
 }
 
 void	swap(t_data *data, char identify)
 {
-	t_doubly_list	*old_stack; //n to gostando do formato dessas func
-	
+	t_doubly_list	*old_stack;
+
 	if (identify == 'a')
 		old_stack = data->stack_a;
 	if (identify == 'b')

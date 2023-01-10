@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-t_doubly_list	*ft_doubly_lstnew(int content) //aq originalmente seria void * p receber qualquer valor
+t_doubly_list	*ft_doubly_lstnew(int content)
 {
 	t_doubly_list	*new_node;
 

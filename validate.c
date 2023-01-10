@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 22:23:29 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/12/25 20:15:27 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/12/31 19:46:52 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	check_ordenate(char **argv)
 			return ;
 		i++;
 	}
-	exit(0); //tem alguma msg ou só sai?
+	exit(0);
 }
 
 void	check_duplicate(char **argv)
@@ -71,9 +71,9 @@ void	check_max_min_int(char	*argv, int point, int number, char *aux)
 
 void	check_numeric(char **argv)
 {
-	int	i;
-	int	point;
-	int number;
+	int		i;
+	int		point;
+	int		number;
 	char	*aux;
 
 	i = 1;
@@ -92,9 +92,8 @@ void	check_numeric(char **argv)
 void	validate_args(int argc, char **argv)
 {
 	if (argc <= 2)
-		exit (0); //If no parameters are specified, the program must not display anything and give the prompt back.
-					//argc 2 é um numero só. Tratando como ja sendo lista ordenada e saindo
+		exit (0);
 	check_numeric(argv);
-	check_duplicate(argv); //pega 1 do argv e percorre td argv comparando, dps pro prox e percorre td comparando dnv
-	check_ordenate(argv); //esse nome?
+	check_duplicate(argv);
+	check_ordenate(argv);
 }
