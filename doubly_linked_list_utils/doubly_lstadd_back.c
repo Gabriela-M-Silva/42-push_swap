@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../headers/push_swap.h"
 
 void	ft_doubly_lstadd_back(t_doubly_list **lst, int number)
 {

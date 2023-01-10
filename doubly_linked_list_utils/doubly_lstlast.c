@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../headers/push_swap.h"
 
 t_doubly_list	*ft_doubly_lstlast(t_doubly_list *lst)
 {

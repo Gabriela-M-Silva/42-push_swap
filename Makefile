@@ -12,19 +12,19 @@
 
 NAME = push_swap
 
-SRC = main.c ./doubly_linked_list_utils/doubly_lst_index.c  ./doubly_linked_list_utils/doubly_lstadd_back.c \
+SRC = ./src/main.c ./doubly_linked_list_utils/doubly_lst_index.c  ./doubly_linked_list_utils/doubly_lstadd_back.c \
 	./doubly_linked_list_utils/doubly_lstlast.c ./doubly_linked_list_utils/doubly_lstnew.c \
 	./doubly_linked_list_utils/doubly_lstclear.c ./doubly_linked_list_utils/doubly_lstsize.c \
-	display_error.c atoi_check.c validate.c ordenate.c ./ordenate_operations/swap.c \
+	./src/display_error.c ./src/atoi_check.c ./src/validate.c ./src/ordenate.c ./ordenate_operations/swap.c \
 	./ordenate_operations/push.c ./ordenate_operations/rotate.c ./ordenate_operations/reverse_rotate.c \
-	sort_small_list.c
+	./src/sort_small_list.c
 
 OBJ = $(SRC:.c=.o)
 
 # MAKEFILE UTILS
 LIBFT_A = ./libft/libft.a
 
-HEADER = push_swap.h
+HEADER = ./headers/push_swap.h
 
 CCFLAGS = -Wall -Wextra -Werror
 

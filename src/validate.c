@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 void	check_ordenate(char **argv)
 {
@@ -91,7 +91,7 @@ void	check_numeric(char **argv)
 
 void	validate_args(int argc, char **argv)
 {
-	if (argc <= 2)
+	if (argc <= 1)
 		exit (0);
 	check_numeric(argv);
 	check_duplicate(argv);
